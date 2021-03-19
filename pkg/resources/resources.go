@@ -86,7 +86,7 @@ func NewResources(clientset *kubernetes.Clientset, namespace string) *Resources 
 	}
 
 	// replicaset
-	res.Rss, err = clientset.AppsV1().ReplicaSets(namespace).List(metav1.ListOptions{})
+	res.Rss, err = clientset.AppsV1().ReplicaSets(namespace).List(metav1.ListOptions{"FieldSelector":{"Status": "Running"}})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to get replicasets in namespace %q: %v\n", namespace, err)
 	}
