@@ -6,7 +6,7 @@ NAMESPACE="default"
 OUTFILE="k8sviz.out"
 TYPE="dot"
 KUBECONFIG=~/kubeconfig
-CONTAINER_IMG=mkimuram/k8sviz:0.2
+CONTAINER_IMG=cpslicense/k8sviz:0.3
 
 #### Functions ####
 function help () {
